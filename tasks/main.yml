@@ -1,0 +1,16 @@
+---
+- name: ensure required packages are installed
+  become: yes
+  become_method: sudo
+  apt: name={{ item }} state=present
+  with_items:
+    - curl
+    - bison
+    - build-essential
+    - zlib1g-dev
+    - libssl-dev
+    - libreadline6-dev
+    - libxml2-dev
+    - git-core
+    - openjdk-7-jre-headless
+
